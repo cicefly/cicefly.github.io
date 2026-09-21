@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="键盘映射指南 - 探索键位自定义与游戏按键设置技巧，提供主流键盘映射软件推荐、教程及常见问题解答。">
+    <meta name="keywords" content="键盘映射,按键自定义,游戏按键设置,宏命令,键盘映射软件">
+    <title>键盘映射-游戏按键自定义与映射软件指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Core Concepts Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 32px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .concept-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .concept-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eff6ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .concept-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .concept-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Tools & Software Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-header {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tool-name {
+            font-weight: 600;
+        }
+
+        .tool-status {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background-color: #f1f5f9;
+            color: var(--text-secondary);
+        }
+
+        .tool-body {
+            padding: 16px;
+            flex-grow: 1;
+        }
+
+        .tool-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .tool-features {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .tool-features li {
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .tool-features li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Guide Steps */
+        .steps-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6.01" y2="8"/><line x1="10" y1="8" x2="10.01" y2="8"/><line x1="14" y1="8" x2="14.01" y2="8"/><line x1="18" y1="8" x2="18.01" y2="8"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="10" y1="12" x2="10.01" y2="12"/><line x1="14" y1="12" x2="14.01" y2="12"/><line x1="18" y1="12" x2="18.01" y2="12"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/><line x1="14" y1="16" x2="14.01" y2="16"/><line x1="18" y1="16" x2="18.01" y2="16"/></svg>
+                键盘映射工具箱
+            </a>
+            <nav class="nav-links">
+                <a href="#concepts">核心概念</a>
+                <a href="#software">映射软件</a>
+                <a href="#guide">使用指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#software" class="btn-cta">开始设置</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>解锁你的键盘潜能</h1>
+                <p>了解什么是键盘映射，如何通过自定义按键提升游戏操作效率，并掌握主流映射软件的使用方法。</p>
+                <div class="hero-tags">
+                    <span class="tag">按键自定义</span>
+                    <span class="tag">宏命令</span>
+                    <span class="tag">游戏辅助</span>
+                    <span class="tag">效率工具</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concepts -->
+        <section id="concepts" class="section">
+            <div class="container">
+                <h2 class="section-title">什么是键盘映射？</h2>
+                <div class="concept-grid">
+                    <article class="concept-card">
+                        <div class="concept-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>按键重定义</h3>
+                        <p>允许用户将物理键盘上的按键重新分配给不同的功能、动作或快捷键，打破默认布局的限制。</p>
+                    </article>
+                    <article class="concept-card">
+                        <div class="concept-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        </div>
+                        <h3>宏命令执行</h3>
+                        <p>将多个连续的按键动作组合成一个“宏”，一键触发复杂的技能连招或自动化操作序列。</p>
+                    </article>
+                    <article class="concept-card">
+                        <div class="concept-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <h3>多设备兼容</h3>
+                        <p>将手机或平板上的虚拟按键布局“映射”到电脑键盘上，实现跨平台或特定硬件的键位适配。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Software Recommendations -->
+        <section id="software" class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">主流映射软件推荐</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-name">按键精灵</span>
+                            <span class="tool-status">通用型</span>
+                        </div>
+                        <div class="tool-body">
+                            <p class="tool-desc">功能强大的自动化脚本工具，支持Windows系统下的复杂按键模拟和鼠标动作。</p>
+                            <ul class="tool-features">
+                                <li>支持脚本录制与回放</li>
+                                <li>丰富的API接口</li>
+                                <li>适合批量操作与自动化办公</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-name">按键大师</span>
+                            <span class="tool-status">游戏优化</span>
+                        </div>
+                        <div class="tool-body">
+                            <p class="tool-desc">专注于游戏按键优化，提供宏录制、按键防冲突检测和游戏模式切换功能。</p>
+                            <ul class="tool-features">
+                                <li>零延迟按键响应</li>
+                                <li>内置防误触机制</li>
+                                <li>轻量级运行，不占用资源</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-name">AutoHotkey</span>
+                            <span class="tool-status">进阶开发</span>
+                        </div>
+                        <div class="tool-body">
+                            <p class="tool-desc">开源的脚本语言工具，适合高级用户进行高度自定义的键盘映射和快捷键编程。</p>
+                            <ul class="tool-features">
+                                <li>完全开源免费</li>
+                                <li>代码级控制能力</li>
+                                <li>社区脚本丰富</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guide -->
+        <section id="guide" class="section">
+            <div class="container">
+                <h2 class="section-title">如何使用键盘映射</h2>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>下载并安装软件</h4>
+                            <p>选择适合你系统的映射软件（如按键大师、AutoHotkey等），从官网下载安装包并完成安装。请确保来源安全，避免安装捆绑软件。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>创建或导入配置</h4>
+                            <p>打开软件，创建新的映射规则。在编辑界面中，将左侧的“功能键”拖拽到右侧的“映射键”位置，或者录制一段连续按键作为宏命令。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>测试与调试</h4>
+                            <p>保存配置后，在目标程序或游戏中进行测试。检查按键响应是否灵敏，宏命令执行是否符合预期，必要时调整触发延迟。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">键盘映射会被游戏封号吗？</div>
+                        <div class="faq-answer">这取决于游戏的具体规则。使用简单的按键重定义通常不违规，但使用自动连点器或脚本进行自动化操作可能违反游戏服务条款，导致封号风险。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">所有软件都支持宏录制吗？</div>
+                        <div class="faq-answer">大多数现代映射软件都支持宏录制，但功能深度不同。简单的工具只能记录按键，高级工具可以记录鼠标移动轨迹和执行时间间隔。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何解决按键冲突问题？</div>
+                        <div class="faq-answer">按键冲突是指同时按下多个键时只有部分生效。使用支持全键无冲（NKRO）的机械键盘，或选择支持多键映射的软件配置。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">AutoHotkey需要编程基础吗？</div>
+                        <div class="faq-answer">基础使用可以通过复制粘贴现成的脚本代码实现，无需编程基础；但如果需要进行复杂的定制，则需要学习基本的语法规则。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于键盘映射</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        本站致力于提供最全面的键盘映射工具介绍、使用教程及注意事项，帮助用户安全、高效地管理按键功能。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#concepts">核心概念</a></li>
+                        <li><a href="#software">软件下载</a></li>
+                        <li><a href="#guide">使用指南</a></li>
+                        <li><a href="#faq">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关工具</h4>
+                    <ul>
+                        <li><a href="#">按键精灵</a></li>
+                        <li><a href="#">AutoHotkey</a></li>
+                        <li><a href="#">雷神加速器</a></li>
+                        <li><a href="#">游戏手柄驱动</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 键盘映射工具箱. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
