@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国产高清自拍 - 提供最优质的国产原创自拍内容分享平台，专注于高清画质与真实自然的表现风格。">
+    <meta name="keywords" content="国产高清自拍,高清自拍,原创自拍,国产摄影,高清影像">
+    <title>国产高清自拍-优质原创影像与高清摄影作品分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-color);
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .filter-tags::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .filter-tags::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 2px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag.active, .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* Portrait aspect ratio */
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .view-count {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Feature Section */
+        .features {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: #fff0f0;
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f0f2f5;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                position: relative;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 12px;
+            }
+
+            .card-title {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <span>HighSelfie</span>
+        </a>
+        <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">最新更新</a></li>
+                <li><a href="#">热门排行</a></li>
+                <li><a href="#">分类浏览</a></li>
+                <li><a href="#">投稿指南</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>国产高清自拍</h1>
+        <p>探索最真实、最自然的原创影像记录，发现身边的美好瞬间。</p>
+        <div class="search-box">
+            <input type="text" placeholder="搜索感兴趣的内容...">
+            <button>搜索</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-title">
+            <span>精选推荐</span>
+            <div class="filter-tags">
+                <button class="tag active">全部</button>
+                <button class="tag">清新自然</button>
+                <button class="tag">居家生活</button>
+                <button class="tag">户外记录</button>
+                <button class="tag">人像特写</button>
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-image">
+                    <span class="card-badge">今日热门</span>
+                    <img src="https://picsum.photos/seed/selfie1/400/560" alt="自然风光与人像摄影">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">午后阳光下的自然呼吸</h3>
+                    <div class="card-meta">
+                        <span class="author">作者: 林浅</span>
+                        <span class="view-count">👁 12.5k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-image">
+                    <span class="card-badge">高清</span>
+                    <img src="https://picsum.photos/seed/selfie2/400/560" alt="居家生活场景">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">周末居家随拍日记</h3>
+                    <div class="card-meta">
+                        <span class="author">作者: 阿喵</span>
+                        <span class="view-count">👁 8.2k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/selfie3/400/560" alt="户外运动记录">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">城市探索：光影记录</h3>
+                    <div class="card-meta">
+                        <span class="author">作者: 摄影师王</span>
+                        <span class="view-count">👁 5.6k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-image">
+                    <span class="card-badge">新作品</span>
+                    <img src="https://picsum.photos/seed/selfie4/400/560" alt="黑白风格摄影">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">黑白：静默的瞬间</h3>
+                    <div class="card-meta">
+                        <span class="author">作者: 暗房</span>
+                        <span class="view-count">👁 9.1k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/selfie5/400/560" alt="生活细节记录">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">细节里的生活美学</h3>
+                    <div class="card-meta">
+                        <span class="author">作者: 小满</span>
+                        <span class="view-count">👁 3.4k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+                <div class="card-image">
+                    <span class="card-badge">高清</span>
+                    <img src="https://picsum.photos/seed/selfie6/400/560" alt="旅行摄影">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">旅途中的光影交错</h3>
+                    <div class="card-meta">
+                        <span class="author">作者: 旅行家</span>
+                        <span class="view-count">👁 15.2k</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="section-title">为什么选择我们</div>
+        <section class="features">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✦</div>
+                    <h3>高清画质</h3>
+                    <p>严格筛选符合高清标准的原创影像作品，确保视觉体验。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✦</div>
+                    <h3>真实原创</h3>
+                    <p>所有内容均来自真实创作者，拒绝过度修图与虚假内容。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✦</div>
+                    <h3>内容丰富</h3>
+                    <p>涵盖自然风光、人像特写、居家生活等多种拍摄题材。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✦</div>
+                    <h3>社区互动</h3>
+                    <p>友好的交流环境，支持创作者与观众之间的直接沟通。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-title">常见问题</div>
+        <section class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">如何上传自己的作品？</div>
+                <div class="faq-answer">注册账号后，点击右上角的“投稿”按钮，按照提示上传您的原创高清自拍作品即可。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">对画质有什么要求？</div>
+                <div class="faq-answer">我们鼓励上传分辨率较高（如1080P及以上）的图片，以保证展示效果和用户体验。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">内容审核标准是什么？</div>
+                <div class="faq-answer">所有上传内容必须符合社区规范，包含真实、健康、不侵犯他人权益的原创内容。</div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>HighSelfie</h4>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">专注于国产原创高清自拍内容的分享与展示平台。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿申请</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>分类浏览</h4>
+                <ul>
+                    <li><a href="#">自然风光</a></li>
+                    <li><a href="#">人像特写</a></li>
+                    <li><a href="#">居家记录</a></li>
+                    <li><a href="#">黑白摄影</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 HighSelfie Platform. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+
+    // FAQ Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            // Close others
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) otherItem.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        });
+    });
+
+    // Filter Tags Interaction
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            tags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            // Here you would typically filter the grid content
+        });
+    });
+</script>
+
+</body>
+</html>
